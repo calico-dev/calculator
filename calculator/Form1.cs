@@ -24,18 +24,21 @@ namespace calculator
             {
                 result = value1 + value2;
                 textBox1.Text = result.ToString();
+                input = result.ToString();
             }
 
             else if (operation == '-')
             {
                 result = value1 - value2;
                 textBox1.Text = result.ToString();
+                input = result.ToString();
             }
 
             else if (operation == '*')
             {
                 result = value1 * value2;
                 textBox1.Text = result.ToString();
+                input = result.ToString();
             }
             
             else if (operation == '/')
@@ -44,6 +47,7 @@ namespace calculator
                 {
                     result = value1 / value2;
                     textBox1.Text = result.ToString();
+                    input = result.ToString();
                 }
                 else
                 {
@@ -184,12 +188,17 @@ namespace calculator
 
         private void reciprocal_Click(object sender, EventArgs e)
         {
-
+            double value;
+            double.TryParse(input, out value);
+            result = Math.ReciprocalEstimate(value);
+            textBox1.Text = result.ToString();
+            input = result.ToString();
         }
 
         private void back_Click(object sender, EventArgs e)
         {
-
+            textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1, 1);
+            input = textBox1.Text;
         }
 
         private void clearall_Click(object sender, EventArgs e)
@@ -213,7 +222,11 @@ namespace calculator
 
         private void square_Click(object sender, EventArgs e)
         {
-
+            double value;
+            double.TryParse(input, out value);
+            result = value * value;
+            textBox1.Text = result.ToString();
+            input = result.ToString();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
