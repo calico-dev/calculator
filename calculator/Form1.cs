@@ -85,7 +85,7 @@ namespace calculator
                 input = textBox1.Text;
             }
 
-            else if (!string.IsNullOrEmpty(textBox1.Text) && decimal.Parse(textBox1.Text) != 0)
+            else if (!string.IsNullOrEmpty(textBox1.Text) && decimal.Parse(textBox1.Text) != 0 )
             {
                 textBox1.Text = "-" + textBox1.Text;
                 input = textBox1.Text;
