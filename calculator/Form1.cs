@@ -40,7 +40,14 @@ namespace calculator
                 textBox1.Text = result.ToString();
                 input = result.ToString();
             }
-            
+
+            else if (operation == '%')
+            {
+                result = value1 % value2;
+                textBox1.Text = result.ToString();
+                input = result.ToString();
+            }
+
             else if (operation == '/')
             {
                 if (value2 != 0)
@@ -197,8 +204,11 @@ namespace calculator
 
         private void back_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1, 1);
-            input = textBox1.Text;
+            if (textBox1.Text.Length > 0)
+            {
+                textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1, 1);
+                input = textBox1.Text;
+            }
         }
 
         private void clearall_Click(object sender, EventArgs e)
@@ -217,7 +227,9 @@ namespace calculator
 
         private void percent_Click(object sender, EventArgs e)
         {
-
+            operand1 = input;
+            operation = '%';
+            input = string.Empty;
         }
 
         private void square_Click(object sender, EventArgs e)
