@@ -15,7 +15,41 @@ namespace calculator
 
         private void equals_Click(object sender, EventArgs e)
         {
+            operand2 = input;
+            double value1, value2;
+            double.TryParse(operand1, out value1);
+            double.TryParse(operand2, out value2);
 
+            if (operation == '+')
+            {
+                result = value1 + value2;
+                this.textBox1.Text = result.ToString();
+            }
+
+            else if (operation == '-')
+            {
+                result = value1 - value2;
+                this.textBox1.Text = result.ToString();
+            }
+
+            else if (operation == '*')
+            {
+                result = value1 * value2;
+                this.textBox1.Text = result.ToString();
+            }
+            
+            else if (operation == '/')
+            {
+                if (value2 != 0)
+                {
+                    result = value1 / value2;
+                    this.textBox1.Text = result.ToString();
+                }
+                else
+                {
+                    textBox1.Text = "Can't Divide by Zero";
+                }
+            }
         }
 
         private void dot_Click(object sender, EventArgs e)
@@ -34,7 +68,7 @@ namespace calculator
 
         private void posneg_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void plus_Click(object sender, EventArgs e)
@@ -145,12 +179,15 @@ namespace calculator
 
         private void clearall_Click(object sender, EventArgs e)
         {
-
+            this.textBox1.Text = "";
+            this.input = string.Empty;
+            this.operand1 = string.Empty;
+            this.operand2 = string.Empty;
         }
 
         private void clearentry_Click(object sender, EventArgs e)
         {
-
+  
         }
 
         private void percent_Click(object sender, EventArgs e)

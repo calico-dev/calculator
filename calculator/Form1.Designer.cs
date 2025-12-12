@@ -211,7 +211,7 @@
             multiply.Name = "multiply";
             multiply.Size = new Size(76, 50);
             multiply.TabIndex = 15;
-            multiply.Text = "x";
+            multiply.Text = "*";
             multiply.UseVisualStyleBackColor = true;
             multiply.Click += multiply_Click;
             // 
@@ -297,6 +297,7 @@
             // 
             // textBox1
             // 
+            textBox1.Font = new Font("Segoe UI", 20F);
             textBox1.Location = new Point(7, 12);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
