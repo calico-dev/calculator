@@ -23,19 +23,19 @@ namespace calculator
             if (operation == '+')
             {
                 result = value1 + value2;
-                this.textBox1.Text = result.ToString();
+                textBox1.Text = result.ToString();
             }
 
             else if (operation == '-')
             {
                 result = value1 - value2;
-                this.textBox1.Text = result.ToString();
+                textBox1.Text = result.ToString();
             }
 
             else if (operation == '*')
             {
                 result = value1 * value2;
-                this.textBox1.Text = result.ToString();
+                textBox1.Text = result.ToString();
             }
             
             else if (operation == '/')
@@ -43,7 +43,7 @@ namespace calculator
                 if (value2 != 0)
                 {
                     result = value1 / value2;
-                    this.textBox1.Text = result.ToString();
+                    textBox1.Text = result.ToString();
                 }
                 else
                 {
@@ -54,21 +54,31 @@ namespace calculator
 
         private void dot_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text = "";
+            textBox1.Text = "";
             input += ".";
-            this.textBox1.Text += input;
+            textBox1.Text += input;
         }
 
         private void zero_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text = "";
+            textBox1.Text = "";
             input += "0";
-            this.textBox1.Text += input;
+            textBox1.Text += input;
         }
 
         private void posneg_Click(object sender, EventArgs e)
         {
-            
+            if (textBox1.Text.StartsWith("-"))
+            {
+                textBox1.Text = textBox1.Text.Substring(1);
+                input = textBox1.Text;
+            }
+
+            else if (!string.IsNullOrEmpty(textBox1.Text) && decimal.Parse(textBox1.Text) != 0)
+            {
+                textBox1.Text = "-" + textBox1.Text;
+                input = textBox1.Text;
+            }
         }
 
         private void plus_Click(object sender, EventArgs e)
@@ -80,23 +90,23 @@ namespace calculator
 
         private void three_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text = "";
+            textBox1.Text = "";
             input += "3";
-            this.textBox1.Text += input;
+            textBox1.Text += input;
         }
 
         private void two_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text = "";
+            textBox1.Text = "";
             input += "2";
-            this.textBox1.Text += input;
+            textBox1.Text += input;
         }
 
         private void one_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text = "";
+            textBox1.Text = "";
             input += "1";
-            this.textBox1.Text += input;
+            textBox1.Text += input;
         }
 
         private void subtract_Click(object sender, EventArgs e)
@@ -108,23 +118,23 @@ namespace calculator
 
         private void six_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text = "";
+            textBox1.Text = "";
             input += "6";
-            this.textBox1.Text += input;
+            textBox1.Text += input;
         }
 
         private void five_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text = "";
+            textBox1.Text = "";
             input += "5";
-            this.textBox1.Text += input;
+            textBox1.Text += input;
         }
 
         private void four_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text = "";
+            textBox1.Text = "";
             input += "4";
-            this.textBox1.Text += input;
+            textBox1.Text += input;
         }
 
         private void multiply_Click(object sender, EventArgs e)
@@ -136,23 +146,23 @@ namespace calculator
 
         private void nine_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text = "";
+            textBox1.Text = "";
             input += "9";
-            this.textBox1.Text += input;
+            textBox1.Text += input;
         }
 
         private void eight_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text = "";
+            textBox1.Text = "";
             input += "8";
-            this.textBox1.Text += input;
+            textBox1.Text += input;
         }
 
         private void seven_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text = "";
+            textBox1.Text = "";
             input += "7";
-            this.textBox1.Text += input;
+            textBox1.Text += input;
         }
 
         private void divide_Click(object sender, EventArgs e)
@@ -179,15 +189,16 @@ namespace calculator
 
         private void clearall_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text = "";
-            this.input = string.Empty;
-            this.operand1 = string.Empty;
-            this.operand2 = string.Empty;
+            textBox1.Text = "";
+            input = string.Empty;
+            operand1 = string.Empty;
+            operand2 = string.Empty;
         }
 
         private void clearentry_Click(object sender, EventArgs e)
         {
-  
+            textBox1.Text = "";
+            input = string.Empty;
         }
 
         private void percent_Click(object sender, EventArgs e)
