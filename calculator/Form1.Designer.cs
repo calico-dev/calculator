@@ -52,6 +52,7 @@
             reciprocal = new Button();
             clearentry = new Button();
             percent = new Button();
+            textBox1 = new TextBox();
             SuspendLayout();
             // 
             // equals
@@ -62,6 +63,7 @@
             equals.TabIndex = 0;
             equals.Text = "=";
             equals.UseVisualStyleBackColor = true;
+            equals.Click += equals_Click;
             // 
             // dot
             // 
@@ -71,6 +73,7 @@
             dot.TabIndex = 1;
             dot.Text = ".";
             dot.UseVisualStyleBackColor = true;
+            dot.Click += dot_Click;
             // 
             // zero
             // 
@@ -80,6 +83,7 @@
             zero.TabIndex = 2;
             zero.Text = "0";
             zero.UseVisualStyleBackColor = true;
+            zero.Click += zero_Click;
             // 
             // posneg
             // 
@@ -89,6 +93,7 @@
             posneg.TabIndex = 3;
             posneg.Text = "+/-";
             posneg.UseVisualStyleBackColor = true;
+            posneg.Click += posneg_Click;
             // 
             // one
             // 
@@ -98,6 +103,7 @@
             one.TabIndex = 4;
             one.Text = "1";
             one.UseVisualStyleBackColor = true;
+            one.Click += one_Click;
             // 
             // two
             // 
@@ -107,6 +113,7 @@
             two.TabIndex = 5;
             two.Text = "2";
             two.UseVisualStyleBackColor = true;
+            two.Click += two_Click;
             // 
             // three
             // 
@@ -116,6 +123,7 @@
             three.TabIndex = 6;
             three.Text = "3";
             three.UseVisualStyleBackColor = true;
+            three.Click += three_Click;
             // 
             // six
             // 
@@ -125,6 +133,7 @@
             six.TabIndex = 7;
             six.Text = "6";
             six.UseVisualStyleBackColor = true;
+            six.Click += six_Click;
             // 
             // five
             // 
@@ -134,6 +143,7 @@
             five.TabIndex = 8;
             five.Text = "5";
             five.UseVisualStyleBackColor = true;
+            five.Click += five_Click;
             // 
             // four
             // 
@@ -143,6 +153,7 @@
             four.TabIndex = 9;
             four.Text = "4";
             four.UseVisualStyleBackColor = true;
+            four.Click += four_Click;
             // 
             // seven
             // 
@@ -152,6 +163,7 @@
             seven.TabIndex = 10;
             seven.Text = "7";
             seven.UseVisualStyleBackColor = true;
+            seven.Click += seven_Click;
             // 
             // eight
             // 
@@ -161,6 +173,7 @@
             eight.TabIndex = 11;
             eight.Text = "8";
             eight.UseVisualStyleBackColor = true;
+            eight.Click += eight_Click;
             // 
             // nine
             // 
@@ -170,6 +183,7 @@
             nine.TabIndex = 12;
             nine.Text = "9";
             nine.UseVisualStyleBackColor = true;
+            nine.Click += nine_Click;
             // 
             // plus
             // 
@@ -179,6 +193,7 @@
             plus.TabIndex = 13;
             plus.Text = "+";
             plus.UseVisualStyleBackColor = true;
+            plus.Click += plus_Click;
             // 
             // subtract
             // 
@@ -188,6 +203,7 @@
             subtract.TabIndex = 14;
             subtract.Text = "-";
             subtract.UseVisualStyleBackColor = true;
+            subtract.Click += subtract_Click;
             // 
             // multiply
             // 
@@ -197,6 +213,7 @@
             multiply.TabIndex = 15;
             multiply.Text = "x";
             multiply.UseVisualStyleBackColor = true;
+            multiply.Click += multiply_Click;
             // 
             // divide
             // 
@@ -206,6 +223,7 @@
             divide.TabIndex = 16;
             divide.Text = "÷";
             divide.UseVisualStyleBackColor = true;
+            divide.Click += divide_Click;
             // 
             // back
             // 
@@ -215,6 +233,7 @@
             back.TabIndex = 17;
             back.Text = "←";
             back.UseVisualStyleBackColor = true;
+            back.Click += back_Click;
             // 
             // clearall
             // 
@@ -224,6 +243,7 @@
             clearall.TabIndex = 18;
             clearall.Text = "C";
             clearall.UseVisualStyleBackColor = true;
+            clearall.Click += clearall_Click;
             // 
             // squareroot
             // 
@@ -233,6 +253,7 @@
             squareroot.TabIndex = 19;
             squareroot.Text = "2√x";
             squareroot.UseVisualStyleBackColor = true;
+            squareroot.Click += squareroot_Click;
             // 
             // square
             // 
@@ -242,6 +263,7 @@
             square.TabIndex = 20;
             square.Text = "x²";
             square.UseVisualStyleBackColor = true;
+            square.Click += square_Click;
             // 
             // reciprocal
             // 
@@ -251,6 +273,7 @@
             reciprocal.TabIndex = 21;
             reciprocal.Text = "1/x";
             reciprocal.UseVisualStyleBackColor = true;
+            reciprocal.Click += reciprocal_Click;
             // 
             // clearentry
             // 
@@ -260,6 +283,7 @@
             clearentry.TabIndex = 22;
             clearentry.Text = "CE";
             clearentry.UseVisualStyleBackColor = true;
+            clearentry.Click += clearentry_Click;
             // 
             // percent
             // 
@@ -269,12 +293,24 @@
             percent.TabIndex = 23;
             percent.Text = "%";
             percent.UseVisualStyleBackColor = true;
+            percent.Click += percent_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(7, 12);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(322, 81);
+            textBox1.TabIndex = 24;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(347, 445);
+            Controls.Add(textBox1);
             Controls.Add(percent);
             Controls.Add(clearentry);
             Controls.Add(reciprocal);
@@ -302,6 +338,7 @@
             Name = "Form1";
             Text = "Calculator";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -330,5 +367,6 @@
         private Button reciprocal;
         private Button clearentry;
         private Button percent;
+        private TextBox textBox1;
     }
 }
