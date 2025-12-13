@@ -45,7 +45,7 @@ namespace calculator
 
             else if (operation == '%')
             {
-                result = value1 % value2;
+                result = ((value1 % value2) + value2) % value2;
                 textBox1.Text = result.ToString();
                 input = result.ToString();
             }
