@@ -13,6 +13,7 @@ namespace calculator
         public Form1()
         {
             InitializeComponent();
+            textBox1.ReadOnly = true;
         }
 
         private void equals_Click(object sender, EventArgs e)
@@ -252,7 +253,7 @@ namespace calculator
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+         
         }
     }
 }
