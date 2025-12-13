@@ -322,6 +322,7 @@
             // 
             // textBox1
             // 
+            textBox1.BorderStyle = BorderStyle.FixedSingle;
             textBox1.Font = new Font("Segoe UI", 20F);
             textBox1.Location = new Point(7, 12);
             textBox1.Multiline = true;
@@ -361,6 +362,8 @@
             Controls.Add(zero);
             Controls.Add(dot);
             Controls.Add(equals);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "Form1";
             Text = "Calculator";
             ResumeLayout(false);
