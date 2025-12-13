@@ -197,11 +197,18 @@ namespace calculator
 
         private void reciprocal_Click(object sender, EventArgs e)
         {
-            double value;
-            double.TryParse(input, out value);
-            result = Math.ReciprocalEstimate(value);
-            textBox1.Text = result.ToString();
-            input = result.ToString();
+            if (Regex.IsMatch(textBox1.Text, "[1-9]"))
+            {
+                double value;
+                double.TryParse(input, out value);
+                result = Math.ReciprocalEstimate(value);
+                textBox1.Text = result.ToString();
+                input = result.ToString();
+            }
+            else
+            {
+                textBox1.Text = "Can't Divide By Zero";
+            }
         }
 
         private void back_Click(object sender, EventArgs e)
